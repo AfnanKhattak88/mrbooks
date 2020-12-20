@@ -1,5 +1,7 @@
 const express = require("express")
 const app =   express()
+const port = process.env.PORT||3000
+
 const expressLayouts = require("express-ejs-layouts")
 const mongoose = require("mongoose")
 
@@ -26,7 +28,7 @@ app.use("",myroutes)
 
  mongoose.connect(dbUri,{useNewUrlParser:true,useUnifiedTopology:true,useCreateIndex:true}).then(() => {
 
-     app.listen(3000,(req,res)=>{
+     app.listen(PORT,(req,res)=>{
 
      console.log("app is up and running!")
 
